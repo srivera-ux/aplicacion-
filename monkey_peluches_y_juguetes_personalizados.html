@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey | Peluches Personalizados y Detalles Infantiles</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            rose: '#FCE7F0',
+                            blush: '#F3C5D8',
+                            dusty: '#E295B5',
+                            accent: '#B8527E',
+                            gold: '#D4AF37',
+                            softBg: '#FFFDFE',
+                            text: '#4A3B43'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFFDFE;
+            color: #4A3B43;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #FFF0F5 0%, #FCE7F0 50%, #F8E1EC 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 149, 181, 0.2);
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 30px -10px rgba(184, 82, 126, 0.15);
+        }
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF0F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E295B5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-blush selection:text-brand-accent">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-card border-b border-brand-rose/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-brand-rose flex items-center justify-center text-brand-accent text-2xl shadow-inner group-hover:scale-105 smooth-transition">
+                    <i class="fa-solid fa-cloud-moon"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-3xl font-bold tracking-wide text-brand-accent block leading-none">Monkey</span>
+                    <span class="text-[10px] tracking-widest uppercase font-medium text-brand-dusty">Peluches & Magia</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#inicio" class="text-brand-text hover:text-brand-accent smooth-transition">Inicio</a>
+                <a href="#personalizar" class="text-brand-text hover:text-brand-accent smooth-transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-dusty"></i> Personalizador
+                </a>
+                <a href="#catalogo" class="text-brand-text hover:text-brand-accent smooth-transition">Catálogo Elegante</a>
+                <a href="#nosotros" class="text-brand-text hover:text-brand-accent smooth-transition">Nuestra Historia</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button onclick="toggleCart()" class="relative p-2.5 text-brand-accent hover:bg-brand-rose/50 rounded-full smooth-transition" aria-label="Carrito de compras">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-accent text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-md">0</span>
+                </button>
+                <a href="https://wa.me/?text=Hola%20Monkey,%20quisiera%20más%20información" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-brand-accent text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-md hover:bg-brand-accent/90 hover:shadow-lg smooth-transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Contactar</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-gradient relative overflow-hidden py-16 lg:py-24">
+        <!-- Floating decorative elements -->
+        <div class="absolute top-10 left-10 w-32 h-32 bg-white/40 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-10 right-10 w-48 h-48 bg-brand-blush/30 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left space-y-6">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 text-brand-accent text-xs font-semibold tracking-wider uppercase shadow-sm border border-brand-rose">
+                        <i class="fa-solid fa-heart text-brand-dusty"></i> Hecho a mano con amor
+                    </span>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
+                        Detalles únicos que abrazan la <span class="italic text-brand-accent">infancia</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-brand-text/80 max-w-xl mx-auto lg:mx-0 font-light">
+                        Creamos peluches personalizados, juguetes artesanales y accesorios diseñados para atesorar los momentos más dulces de tus pequeños.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#personalizar" class="w-full sm:w-auto text-center bg-brand-accent text-white px-8 py-3.5 rounded-full font-medium shadow-lg hover:bg-brand-accent/90 hover:scale-105 smooth-transition">
+                            Diseñar mi Peluche
+                        </a>
+                        <a href="#catalogo" class="w-full sm:w-auto text-center glass-card text-brand-accent border border-brand-blush px-8 py-3.5 rounded-full font-medium hover:bg-white smooth-transition">
+                            Explorar Colección
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase -->
+                <div class="relative flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-4 bg-white/60 backdrop-blur border-2 border-brand-blush shadow-2xl flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=800&q=80" alt="Peluche Oso Personalizado" class="w-full h-full object-cover rounded-full shadow-inner">
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-2 -left-2 glass-card p-4 rounded-2xl custom-shadow flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-rose flex items-center justify-center text-brand-accent">
+                                <i class="fa-solid fa-ribbon text-xl"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs font-semibold text-brand-text">100% Personalizables</p>
+                                <p class="text-[10px] text-brand-dusty">Nombres, colores y bordados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMIZER INTERACTIVE SECTION -->
+    <section id="personalizar" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-accent text-sm font-semibold tracking-widest uppercase">Estudio Creativo</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-text mt-1">Personaliza el Peluche Soñado</h2>
+                <p class="text-brand-text/70 mt-2">Elige los detalles y crea un compañero inseparable para tu bebé.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-brand-softBg p-6 sm:p-10 rounded-3xl border border-brand-rose custom-shadow">
+                <!-- Preview Canvas -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-brand-rose/60 w-full">
+                    <div id="custom-preview-bg" class="w-64 h-64 rounded-full flex items-center justify-center relative transition-all duration-500 bg-brand-rose/30">
+                        <!-- Plushie Graphic Base (SVG dynamic) -->
+                        <svg id="plushie-svg" class="w-48 h-48 transition-all duration-300 drop-shadow-md" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Ears -->
+                            <circle cx="50" cy="50" r="25" class="svg-body-color" fill="#F3C5D8"/>
+                            <circle cx="50" cy="50" r="14" fill="#FFEBF2"/>
+                            <circle cx="150" cy="50" r="25" class="svg-body-color" fill="#F3C5D8"/>
+                            <circle cx="150" cy="50" r="14" fill="#FFEBF2"/>
+                            <!-- Head -->
+                            <circle cx="100" cy="100" r="60" class="svg-body-color" fill="#F3C5D8"/>
+                            <!-- Snout -->
+                            <ellipse cx="100" cy="115" rx="22" ry="16" fill="#FFFDFE"/>
+                            <ellipse cx="100" cy="108" rx="8" ry="6" fill="#4A3B43"/>
+                            <!-- Eyes -->
+                            <circle cx="80" cy="90" r="5" fill="#4A3B43"/>
+                            <circle cx="120" cy="90" r="5" fill="#4A3B43"/>
+                            <circle cx="82" cy="88" r="1.5" fill="white"/>
+                            <circle cx="122" cy="88" r="1.5" fill="white"/>
+                            <!-- Bow accessory -->
+                            <g id="svg-accessory" class="transition-all duration-300">
+                                <path d="M100 145 L85 135 L85 155 Z" fill="#B8527E"/>
+                                <path d="M100 145 L115 135 L115 155 Z" fill="#B8527E"/>
+                                <circle cx="100" cy="145" r="5" fill="#D4AF37"/>
+                            </g>
+                        </svg>
+                        
+                        <!-- Dynamic Embroidery Text Overlay -->
+                        <div id="preview-embroidery" class="absolute bottom-10 bg-white/90 px-3 py-1 rounded-full text-xs font-serif italic font-bold text-brand-accent shadow-sm border border-brand-rose">
+                            "Tu Nombre"
+                        </div>
+                    </div>
+                    <span class="text-xs text-brand-dusty mt-4 italic">Vista previa interactiva del diseño</span>
+                </div>
+
+                <!-- Customizer Form -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Step 1: Model Selection -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-text mb-2">1. Elige el Personaje:</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button type="button" onclick="selectModel('oso')" class="model-btn active border-2 border-brand-accent bg-brand-rose/40 p-3 rounded-xl text-center font-medium text-xs sm:text-sm text-brand-text hover:border-brand-accent smooth-transition">
+                                <i class="fa-solid fa-bear-hug text-lg mb-1 block text-brand-accent"></i> Osito Bebé
+                            </button>
+                            <button type="button" onclick="selectModel('conejo')" class="model-btn border-2 border-transparent bg-white p-3 rounded-xl text-center font-medium text-xs sm:text-sm text-brand-text hover:border-brand-accent smooth-transition">
+                                <i class="fa-solid fa-hand-holding-heart text-lg mb-1 block text-brand-accent"></i> Conejita
+                            </button>
+                            <button type="button" onclick="selectModel('mono')" class="model-btn border-2 border-transparent bg-white p-3 rounded-xl text-center font-medium text-xs sm:text-sm text-brand-text hover:border-brand-accent smooth-transition">
+                                <i class="fa-solid fa-face-smile text-lg mb-1 block text-brand-accent"></i> Monito Monkey
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Color Picker -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-text mb-2">2. Color del Peluche:</label>
+                        <div class="flex items-center gap-4">
+                            <button onclick="setPlushColor('#F3C5D8')" class="w-9 h-9 rounded-full bg-[#F3C5D8] border-2 border-white shadow-md hover:scale-110 smooth-transition" title="Rosa Pastel"></button>
+                            <button onclick="setPlushColor('#E3D5CA')" class="w-9 h-9 rounded-full bg-[#E3D5CA] border-2 border-white shadow-md hover:scale-110 smooth-transition" title="Beige Taza"></button>
+                            <button onclick="setPlushColor('#D8E2DC')" class="w-9 h-9 rounded-full bg-[#D8E2DC] border-2 border-white shadow-md hover:scale-110 smooth-transition" title="Verde Menta Suave"></button>
+                            <button onclick="setPlushColor('#E8AEB7')" class="w-9 h-9 rounded-full bg-[#E8AEB7] border-2 border-white shadow-md hover:scale-110 smooth-transition" title="Rosa Palo"></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Name / Text Embroidery -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-text mb-2">3. Nombre a Bordar:</label>
+                        <input type="text" id="embroidery-input" maxlength="12" placeholder="Ej: Sofía" oninput="updateEmbroidery(this.value)" class="w-full px-4 py-2.5 rounded-xl border border-brand-blush focus:outline-none focus:ring-2 focus:ring-brand-accent text-sm">
+                    </div>
+
+                    <!-- Step 4: Accessory Option -->
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-text mb-2">4. Accesorio Incluido:</label>
+                        <select id="accessory-select" onchange="updateAccessory(this.value)" class="w-full px-4 py-2.5 rounded-xl border border-brand-blush focus:outline-none focus:ring-2 focus:ring-brand-accent text-sm bg-white">
+                            <option value="lazo">Lazo Elegante de Satén</option>
+                            <option value="corona">Corona Dorada Princesa</option>
+                            <option value="bufanda">Bufanda Tejida</option>
+                        </select>
+                    </div>
+
+                    <!-- Pricing & Add to Cart -->
+                    <div class="pt-4 border-t border-brand-rose/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="text-xs text-brand-dusty block">Precio del Personalizado</span>
+                            <span class="font-serif text-2xl font-bold text-brand-accent">$34.900</span>
+                        </div>
+                        <button onclick="addCustomToCart()" class="w-full sm:w-auto bg-brand-accent text-white px-8 py-3 rounded-full font-medium shadow-md hover:bg-brand-accent/90 smooth-transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i> Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATALOG SECTION -->
+    <section id="catalogo" class="py-20 bg-brand-softBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-accent text-sm font-semibold tracking-widest uppercase">Colección Exclusiva</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-text mt-1">Catálogo de Ternura</h2>
+                </div>
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                    <button onclick="filterProducts('todos')" class="filter-btn active bg-brand-accent text-white px-4 py-1.5 rounded-full text-xs font-medium smooth-transition">Todos</button>
+                    <button onclick="filterProducts('peluches')" class="filter-btn bg-white text-brand-text border border-brand-blush px-4 py-1.5 rounded-full text-xs font-medium hover:border-brand-accent smooth-transition">Peluches</button>
+                    <button onclick="filterProducts('juguetes')" class="filter-btn bg-white text-brand-text border border-brand-blush px-4 py-1.5 rounded-full text-xs font-medium hover:border-brand-accent smooth-transition">Juguetes de Madera</button>
+                    <button onclick="filterProducts('accesorios')" class="filter-btn bg-white text-brand-text border border-brand-blush px-4 py-1.5 rounded-full text-xs font-medium hover:border-brand-accent smooth-transition">Accesorios</button>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamic Products inserted via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US & ELEGANT BANNER -->
+    <section id="nosotros" class="py-20 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="aspect-w-4 aspect-h-3 rounded-3xl overflow-hidden shadow-xl border-4 border-brand-rose">
+                        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80" alt="Habitación infantil con juguetes Monkey" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl hidden sm:block max-w-xs border border-brand-blush">
+                        <p class="font-serif italic text-brand-accent font-semibold text-base">"Diseñamos recuerdos que acompañan toda una vida."</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-brand-accent text-sm font-semibold tracking-widest uppercase">Sobre Monkey</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-text">Creando Magia para los más Pequeños</h2>
+                    <p class="text-brand-text/80 leading-relaxed font-light">
+                        En <strong>Monkey</strong> nos especializamos en transformar momentos ordinarios en recuerdos inolvidables. Nacimos con la ilusión de ofrecer alternativas delicadas, elegantes y seguras para los bebés y niños.
+                    </p>
+                    <p class="text-brand-text/80 leading-relaxed font-light">
+                        Cada peluche personalizado y juguete en nuestro catálogo está fabricado con materiales hipoalergénicos de alta calidad, tonos suaves y un acabado artesanal impecable.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 pt-4 text-center">
+                        <div class="p-4 bg-brand-rose/30 rounded-2xl">
+                            <span class="font-serif text-2xl font-bold text-brand-accent block">100%</span>
+                            <span class="text-xs text-brand-dusty">Seguro & Antialérgico</span>
+                        </div>
+                        <div class="p-4 bg-brand-rose/30 rounded-2xl">
+                            <span class="font-serif text-2xl font-bold text-brand-accent block">+1K</span>
+                            <span class="text-xs text-brand-dusty">Sonrisas Entregadas</span>
+                        </div>
+                        <div class="p-4 bg-brand-rose/30 rounded-2xl">
+                            <span class="font-serif text-2xl font-bold text-brand-accent block">Artesanal</span>
+                            <span class="text-xs text-brand-dusty">Diseño Exclusivo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOPPING CART MODAL (SLIDE-OVER) -->
+    <div id="cart-modal" class="fixed inset-0 z-50 invisible opacity-0 transition-all duration-300">
+        <!-- Backdrop -->
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        
+        <!-- Cart Drawer -->
+        <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 id-drawer">
+            <!-- Cart Header -->
+            <div class="p-6 border-b border-brand-rose flex items-center justify-between bg-brand-softBg">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-brand-accent text-xl"></i>
+                    <h3 class="font-serif text-xl font-bold text-brand-text">Tu Carrito Monkey</h3>
+                </div>
+                <button onclick="toggleCart()" class="p-2 text-brand-dusty hover:text-brand-accent rounded-full text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div id="cart-items" class="p-6 flex-1 overflow-y-auto space-y-4">
+                <!-- Cart items will be rendered dynamically -->
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="p-6 border-t border-brand-rose bg-brand-softBg space-y-4">
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-brand-text/70">Subtotal</span>
+                    <span id="cart-subtotal" class="font-bold text-brand-text text-base">$0</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-brand-text/70">Envío</span>
+                    <span class="text-xs text-brand-accent font-medium">Calculado al finalizar</span>
+                </div>
+                <div class="border-t border-brand-rose/60 pt-3 flex justify-between items-center">
+                    <span class="font-serif font-bold text-brand-text text-lg">Total</span>
+                    <span id="cart-total" class="font-serif font-bold text-brand-accent text-2xl">$0</span>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-brand-accent text-white py-3.5 rounded-full font-medium shadow-lg hover:bg-brand-accent/90 smooth-transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Completar Pedido por WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-card border border-brand-blush px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-brand-accent text-white flex items-center justify-center text-sm">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <p id="toast-title" class="font-semibold text-sm text-brand-text">¡Agregado con éxito!</p>
+            <p id="toast-msg" class="text-xs text-brand-dusty">El producto está en tu carrito.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-softBg border-t border-brand-rose py-12 text-sm text-brand-text">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1: Brand info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-brand-rose flex items-center justify-center text-brand-accent text-lg">
+                            <i class="fa-solid fa-cloud-moon"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-bold text-brand-accent">Monkey</span>
+                    </div>
+                    <p class="text-xs text-brand-text/70 leading-relaxed">
+                        Tienda online especializada en peluches personalizados, juguetes educativos y detalles llenos de amor e inocencia.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-brand-accent mb-3">Navegación</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-brand-accent transition">Inicio</a></li>
+                        <li><a href="#personalizar" class="hover:text-brand-accent transition">Personalizador</a></li>
+                        <li><a href="#catalogo" class="hover:text-brand-accent transition">Catálogo</a></li>
+                        <li><a href="#nosotros" class="hover:text-brand-accent transition">Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h4 class="font-serif font-bold text-brand-accent mb-3">Atención al Cliente</h4>
+                    <ul class="space-y-2 text-xs text-brand-text/80">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-dusty"></i> contacto@monkeytienda.com</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-dusty"></i> +57 300 123 4567</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-dusty"></i> Envíos a todo el país</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social & Newsletter -->
+                <div>
+                    <h4 class="font-serif font-bold text-brand-accent mb-3">Síguenos</h4>
+                    <div class="flex gap-3 text-lg text-brand-accent mb-4">
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-rose flex items-center justify-center hover:bg-brand-accent hover:text-white smooth-transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-rose flex items-center justify-center hover:bg-brand-accent hover:text-white smooth-transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-brand-rose flex items-center justify-center hover:bg-brand-accent hover:text-white smooth-transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                    <span class="text-[11px] text-brand-dusty block">© 2026 Monkey. Todos los derechos reservados.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Sample Product Data
+        const products = [
+            {
+                id: 1,
+                name: 'Oso Ballerina Rosa',
+                category: 'peluches',
+                price: 28900,
+                image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=500&q=80',
+                desc: 'Soft plush bear with delicate pink tutu.'
+            },
+            {
+                id: 2,
+                name: 'Conejo Tejido Crochet',
+                category: 'peluches',
+                price: 24500,
+                image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=500&q=80',
+                desc: 'Amigurumi de hilo de algodón 100% orgánico.'
+            },
+            {
+                id: 3,
+                name: 'Torre de Anillos de Madera Pastel',
+                category: 'juguetes',
+                price: 19900,
+                image: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=500&q=80',
+                desc: 'Juguete de estimulación en tonos nórdicos.'
+            },
+            {
+                id: 4,
+                name: 'Caja Musical Elegante Carrusel',
+                category: 'accesorios',
+                price: 32000,
+                image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=500&q=80',
+                desc: 'Melodía suave para el descanso del bebé.'
+            },
+            {
+                id: 5,
+                name: 'Móvil Cuna Estrellas & Nubes',
+                category: 'accesorios',
+                price: 29000,
+                image: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=500&q=80',
+                desc: 'Móvil decorativo de fieltro en tonos pastel.'
+            },
+            {
+                id: 6,
+                name: 'Cámara Fotográfica de Madera',
+                category: 'juguetes',
+                price: 16500,
+                image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=500&q=80',
+                desc: 'Juguete simbólico de madera natural pulida.'
+            }
+        ];
+
+        let cart = [];
+        let currentCustomizer = {
+            model: 'oso',
+            color: '#F3C5D8',
+            embroidery: 'Tu Nombre',
+            accessory: 'lazo',
+            price: 34900
+        };
+
+        // Render Catalog Products
+        function renderProducts(items) {
+            const container = document.getElementById('product-grid');
+            container.innerHTML = '';
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl overflow-hidden border border-brand-rose/80 custom-shadow hover:-translate-y-1 smooth-transition flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-52 overflow-hidden bg-brand-rose/20">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover hover:scale-105 smooth-transition">
+                            <button onclick="addToCart(${product.id})" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white text-brand-accent shadow-md flex items-center justify-center hover:bg-brand-accent hover:text-white smooth-transition">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] uppercase font-semibold text-brand-dusty tracking-wider">${product.category}</span>
+                            <h3 class="font-serif font-bold text-lg text-brand-text mt-0.5">${product.name}</h3>
+                            <p class="text-xs text-brand-text/70 mt-1 line-clamp-2">${product.desc}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-brand-rose/30 mt-2">
+                        <span class="font-serif font-bold text-brand-accent text-lg">$${product.price.toLocaleString()}</span>
+                        <button onclick="addToCart(${product.id})" class="text-xs font-semibold text-brand-accent hover:underline">Comprar</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Filter Catalog
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-accent', 'text-white');
+                btn.classList.add('bg-white', 'text-brand-text');
+            });
+
+            event.target.classList.remove('bg-white', 'text-brand-text');
+            event.target.classList.add('bg-brand-accent', 'text-white');
+
+            if (category === 'todos') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // Customizer Controls
+        function selectModel(model) {
+            currentCustomizer.model = model;
+            document.querySelectorAll('.model-btn').forEach(btn => {
+                btn.classList.remove('border-brand-accent', 'bg-brand-rose/40');
+                btn.classList.add('border-transparent', 'bg-white');
+            });
+            event.currentTarget.classList.remove('border-transparent', 'bg-white');
+            event.currentTarget.classList.add('border-brand-accent', 'bg-brand-rose/40');
+        }
+
+        function setPlushColor(colorHex) {
+            currentCustomizer.color = colorHex;
+            const bodyElements = document.querySelectorAll('.svg-body-color');
+            bodyElements.forEach(el => el.setAttribute('fill', colorHex));
+        }
+
+        function updateEmbroidery(val) {
+            const text = val.trim() !== '' ? `"${val}"` : '"Tu Nombre"';
+            currentCustomizer.embroidery = val.trim() !== '' ? val : 'Sin nombre';
+            document.getElementById('preview-embroidery').innerText = text;
+        }
+
+        function updateAccessory(acc) {
+            currentCustomizer.accessory = acc;
+            const svgAcc = document.getElementById('svg-accessory');
+            if (acc === 'lazo') {
+                svgAcc.innerHTML = `
+                    <path d="M100 145 L85 135 L85 155 Z" fill="#B8527E"/>
+                    <path d="M100 145 L115 135 L115 155 Z" fill="#B8527E"/>
+                    <circle cx="100" cy="145" r="5" fill="#D4AF37"/>
+                `;
+            } else if (acc === 'corona') {
+                svgAcc.innerHTML = `
+                    <path d="M85 50 L90 35 L100 45 L110 35 L115 50 Z" fill="#D4AF37"/>
+                `;
+            } else {
+                svgAcc.innerHTML = `
+                    <rect x="75" y="135" width="50" height="12" rx="6" fill="#E295B5"/>
+                `;
+            }
+        }
+
+        function addCustomToCart() {
+            const customItem = {
+                id: 'custom-' + Date.now(),
+                name: `Peluche Personalizado (${currentCustomizer.model.toUpperCase()})`,
+                price: currentCustomizer.price,
+                details: `Nombre: ${currentCustomizer.embroidery} | Accesorio: ${currentCustomizer.accessory}`,
+                quantity: 1,
+                image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=200&q=80'
+            };
+            cart.push(customItem);
+            updateCartUI();
+            showToast('¡Peluche Personalizado Creado!', 'Añadido a tu carrito con éxito');
+            toggleCart();
+        }
+
+        // Cart Logic
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    details: 'Producto de catálogo',
+                    quantity: 1,
+                    image: product.image
+                });
+            }
+
+            updateCartUI();
+            showToast('Producto añadido', `${product.name} se agregó al carrito.`);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartTotal = document.getElementById('cart-total');
+
+            // Total Count
+            const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.innerText = totalQty;
+
+            // Render Items
+            cartItemsContainer.innerHTML = '';
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-12 text-brand-dusty">
+                        <i class="fa-solid fa-heart-crack text-4xl mb-3 block"></i>
+                        <p class="text-sm">Tu carrito está vacío.</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'flex items-center gap-4 bg-brand-softBg p-3 rounded-2xl border border-brand-rose/50';
+                    div.innerHTML = `
+                        <img src="${item.image}" class="w-14 h-14 object-cover rounded-xl border border-brand-rose">
+                        <div class="flex-1">
+                            <h4 class="font-serif font-bold text-xs text-brand-text">${item.name}</h4>
+                            <p class="text-[10px] text-brand-dusty">${item.details}</p>
+                            <span class="text-xs font-bold text-brand-accent">$${item.price.toLocaleString()} x ${item.quantity}</span>
+                        </div>
+                        <button onclick="removeFromCart('${item.id}')" class="text-brand-dusty hover:text-red-400 p-2 text-sm">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    `;
+                    cartItemsContainer.appendChild(div);
+                });
+            }
+
+            // Sums
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartSubtotal.innerText = `$${totalAmount.toLocaleString()}`;
+            cartTotal.innerText = `$${totalAmount.toLocaleString()}`;
+        }
+
+        function toggleCart() {
+            const modal = document.getElementById('cart-modal');
+            const drawer = modal.querySelector('.id-drawer');
+            
+            if (modal.classList.contains('invisible')) {
+                modal.classList.remove('invisible', 'opacity-0');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('translate-x-full');
+                setTimeout(() => {
+                    modal.classList.add('invisible', 'opacity-0');
+                }, 300);
+            }
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = message;
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                showToast('Carrito Vacío', 'Agrega productos antes de realizar tu pedido.');
+                return;
+            }
+
+            let message = "¡Hola *Monkey*! 🌸 Quiero realizar el siguiente pedido:\n\n";
+            cart.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}*\n   Detalles: ${item.details}\n   Cantidad: ${item.quantity}\n   Precio: $${(item.price * item.quantity).toLocaleString()}\n\n`;
+            });
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            message += `*Total estimado:* $${total.toLocaleString()}\n\n¿Me indican los pasos para finalizar el pago? Gracias 💕`;
+
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/?text=${encoded}`, '_blank');
+        }
+
+        // Initialize Page
+        window.onload = function() {
+            renderProducts(products);
+            setPlushColor('#F3C5D8');
+        };
+    </script>
+</body>
+</html>
